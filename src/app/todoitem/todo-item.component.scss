@@ -1,0 +1,12 @@
+.item-component {
+    margin: auto;
+}
+
+::ng-deep .done-checkbox {
+    & .mat-checkbox-background, .mat-checkbox-frame {
+      border-radius: 70% !important;
+    }
+    &.mat-checkbox-focused {
+        background-color: green
+    }
+  }

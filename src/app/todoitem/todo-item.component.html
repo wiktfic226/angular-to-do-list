@@ -1,0 +1,7 @@
+<mat-list-item role="listitem" class="item-component">
+    <mat-checkbox (change)="markTask()" color="accent" class="done-checkbox"></mat-checkbox>
+    {{getItemName()}}
+    <button type="button" class="button-todo" color="primary" (click)="deleteTask()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</mat-list-item>
