@@ -1,12 +1,17 @@
 .item-component {
-    margin: auto;
+    padding: 5%;
+    display: inline-block;
+    font-size: larger;
 }
+
 
 ::ng-deep .done-checkbox {
     & .mat-checkbox-background, .mat-checkbox-frame {
       border-radius: 70% !important;
+      size: 120%;
     }
-    &.mat-checkbox-focused {
-        background-color: green
-    }
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: green !important;
   }
