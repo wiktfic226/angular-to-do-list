@@ -1,25 +1,23 @@
-<mat-list-item
-  role="listitem"
-  class="item-component"
-  appDisplayDateTooltip
-  [isDone]="this.todo.done"
-  [dateDone]="getDoneDateString()!"
->
-  <mat-checkbox
-    (change)="markTask()"
-    [checked]="this.todo.done"
-    class="done-checkbox"
-    #donecheckbox
-  ></mat-checkbox>
-  {{ getItemName() }}
-  <button
-    type="button"
-    mat-mini-fab
-    color="primary"
-    class="delete-button"
-    class="mat-elevation-z0"
-    (click)="deleteTask()"
+<div class="todo-item">
+  <span class="item-name">
+    <mat-checkbox
+      (change)="markTask()"
+      [checked]="this.todo.done"
+      class="done-checkbox"
+      #donecheckbox
+    ></mat-checkbox
   >
-    <mat-icon>delete</mat-icon>
-  </button>
-</mat-list-item>
+    {{ getItemName() }}</span>
+  <div class="item-button"
+    ><button
+      type="button"
+      mat-mini-fab
+      color="primary"
+      class="delete-button"
+      class="mat-elevation-z0"
+      (click)="deleteTask()"
+    >
+      <mat-icon>delete</mat-icon>
+    </button></div
+  >
+</div>

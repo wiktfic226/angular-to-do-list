@@ -6,30 +6,41 @@
         <mat-label>Nazwa taska</mat-label>
         <input matInput type="text" id="task" #task />
       </mat-form-field>
-      <button type="button" mat-raised-button color="primary" (click)="addTask()">Add</button>
+      <button
+        type="button"
+        mat-raised-button
+        color="primary"
+        (click)="addTask()"
+      >
+        Add
+      </button>
     </form>
   </div>
   <mat-card-subtitle>Lista zadań</mat-card-subtitle>
-  <div class="tasks-list" role="list"> 
+  <div class="tasks-list" role="list">
     <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="list-viewport">
-    <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: false">
-      <p matLine></p>
-      <app-todo [todo]=task></app-todo>
-    </mat-list-item>
-  </cdk-virtual-scroll-viewport>
+      <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: false">
+        <p matLine></p>
+        <app-todo [todo]="task"></app-todo>
+      </mat-list-item>
+    </cdk-virtual-scroll-viewport>
   </div>
   <mat-card-subtitle>Zrobione</mat-card-subtitle>
-  <div class="tasks-list" role="list"> 
+  <div class="tasks-list" role="list">
     <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="list-viewport">
-    <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: true">
-      <p matLine></p>
-      <p matLine></p>
-      <p matLine></p>
-      <app-todo [todo]=task></app-todo>
-    </mat-list-item>
-  </cdk-virtual-scroll-viewport>
+      <mat-list-item
+        *ngFor="let task of getTasks() | donetasksfilter: true"
+        role="listitem"
+        class="item-component"
+        appDisplayDateTooltip
+        [isDone]="task.done"
+        [dateDone]="getDoneDateString(task)!"
+      >
+        <p matLine></p>
+        <p matLine></p>
+        <p matLine></p>
+        <app-todo [todo]="task"></app-todo>
+      </mat-list-item>
+    </cdk-virtual-scroll-viewport>
   </div>
 </mat-card>
-
-
-

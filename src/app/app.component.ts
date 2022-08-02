@@ -28,4 +28,8 @@ export class AppComponent implements OnInit{
   getTasks() {
     return this.todosService.todos;
   }
+
+  getDoneDateString(todo: Todo) {
+    return todo.dateDone?.toDateString();
+  }
 }

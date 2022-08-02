@@ -2,6 +2,8 @@
     padding: 3%;
     font-size: larger;
     display: inline-block;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .delete-button {
@@ -27,4 +29,17 @@
     width: 25px;
     height: 25px;
     margin-right: 10px;
+}
+
+.todo-item{
+  position: relative;
+  padding: 3%;
+  font-size: larger;
+}
+
+.item-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 5px;
 }
