@@ -11,7 +11,7 @@
   </div>
   <mat-card-subtitle>Lista zadań</mat-card-subtitle>
   <div class="tasks-list" role="list"> 
-    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="list-viewport">
     <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: false">
       <p matLine></p>
       <app-todo [todo]=task></app-todo>
@@ -20,7 +20,7 @@
   </div>
   <mat-card-subtitle>Zrobione</mat-card-subtitle>
   <div class="tasks-list" role="list"> 
-    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="list-viewport">
     <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: true">
       <p matLine></p>
       <p matLine></p>

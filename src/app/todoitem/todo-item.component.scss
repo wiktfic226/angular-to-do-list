@@ -1,6 +1,7 @@
 .item-component {
-    padding: 5%;
+    padding: 3%;
     font-size: larger;
+    display: inline-block;
 }
 
 .delete-button {
@@ -8,6 +9,7 @@
   width: 40px;
   position: absolute;
   right: 0;
+  top: 0;
 }
 
 ::ng-deep .done-checkbox {
