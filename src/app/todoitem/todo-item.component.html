@@ -1,12 +1,15 @@
 <mat-list-item role="listitem" class="item-component">
   <mat-checkbox
     (change)="markTask()"
+    [checked]="this.todo.done"
     class="done-checkbox"
+    #donecheckbox
   ></mat-checkbox>
-  {{ getItemName() }}&nbsp;
+  {{ getItemName() }}
   <button
     type="button"
     mat-mini-fab
+    color="primary"
     (click)="deleteTask()"
   >
     <mat-icon>delete</mat-icon>

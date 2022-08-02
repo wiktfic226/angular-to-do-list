@@ -8,9 +8,25 @@
 
 .tasks-list {
     margin: 10px;
-    
+}
+
+.task-form{
+    align-items: center;
 }
 
 .todo-card{
     max-width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    align-items: center;
 }
+
+.example-viewport {
+    height: 200px;
+    width:auto;
+    border: 3px solid #6A1B9A;
+  }
+  
+  .example-item {
+    height: 50px;
+  }

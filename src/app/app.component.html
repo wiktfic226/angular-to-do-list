@@ -1,19 +1,33 @@
 <mat-card class="todo-card">
   <mat-card-title>Todo</mat-card-title>
-  <form layout layout-align="center" layout-padding>
-    <mat-form-field class="form-field" appearance="outline">
-      <mat-label>Nazwa taska</mat-label>
-      <input matInput type="text" id="task" #task />
-    </mat-form-field>
-    <button type="button" mat-raised-button color="primary" (click)="addTask()">Add</button>
-  </form>
+  <div class="task-form">
+    <form layout layout-align="center" layout-padding>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Nazwa taska</mat-label>
+        <input matInput type="text" id="task" #task />
+      </mat-form-field>
+      <button type="button" mat-raised-button color="primary" (click)="addTask()">Add</button>
+    </form>
+  </div>
   <mat-card-subtitle>Lista zadań</mat-card-subtitle>
   <div class="tasks-list" role="list"> 
-    <mat-list-item *ngFor="let task of getTasks()">
+    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: false">
       <p matLine></p>
       <app-todo [todo]=task></app-todo>
     </mat-list-item>
+  </cdk-virtual-scroll-viewport>
+  </div>
+  <mat-card-subtitle>Zrobione</mat-card-subtitle>
+  <div class="tasks-list" role="list"> 
+    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: true">
+      <p matLine></p>
+      <app-todo [todo]=task></app-todo>
+    </mat-list-item>
+  </cdk-virtual-scroll-viewport>
   </div>
 </mat-card>
+
 
 

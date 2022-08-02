@@ -14,7 +14,6 @@ export class TodosService {
 
   add(task: Todo) {
     this.todos.push(task);
-    console.log(this.todos);
   }
 
   delete(task: Todo) {

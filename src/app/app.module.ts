@@ -10,11 +10,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { TodoItemComponent } from './todoitem/todo-item.component';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { DoneTasksFilterPipe } from './donetasksfilter/donetasksfilter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    DoneTasksFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

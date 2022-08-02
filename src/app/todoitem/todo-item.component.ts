@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Todo, TodosService } from '../todos/todos.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { Todo, TodosService } from '../todos/todos.service';
 export class TodoItemComponent implements OnInit {
 
   @Input() todo!: Todo;
+  @ViewChild('donecheckbox', { static: true }) 
+  doneCheckbox!: ElementRef;
 
   constructor(private todoService: TodosService) { }
 
@@ -26,5 +28,4 @@ export class TodoItemComponent implements OnInit {
   markTask() {
     this.todoService.markTask(this.todo);
   }
-
 }
