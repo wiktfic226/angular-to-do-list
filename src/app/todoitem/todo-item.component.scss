@@ -1,17 +1,28 @@
 .item-component {
     padding: 5%;
-    display: inline-block;
     font-size: larger;
 }
 
+.delete-button {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 0;
+}
 
 ::ng-deep .done-checkbox {
     & .mat-checkbox-background, .mat-checkbox-frame {
       border-radius: 70% !important;
-      size: 120%;
+      width: 100%;
     }
   }
 
   ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
     background-color: green !important;
   }
+
+  ::ng-deep .mat-checkbox .mat-checkbox-inner-container {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}

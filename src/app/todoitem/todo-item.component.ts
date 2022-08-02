@@ -28,4 +28,8 @@ export class TodoItemComponent implements OnInit {
   markTask() {
     this.todoService.markTask(this.todo);
   }
+
+  getDoneDateString() {
+    return this.todo.dateDone?.toDateString();
+  }
 }

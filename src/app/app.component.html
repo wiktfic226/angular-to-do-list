@@ -23,6 +23,8 @@
     <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
     <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: true">
       <p matLine></p>
+      <p matLine></p>
+      <p matLine></p>
       <app-todo [todo]=task></app-todo>
     </mat-list-item>
   </cdk-virtual-scroll-viewport>

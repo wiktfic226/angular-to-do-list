@@ -12,12 +12,16 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { DoneTasksFilterPipe } from './donetasksfilter/donetasksfilter.pipe';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDividerModule} from '@angular/material/divider';
+import { DisplayDateTooltipDirective } from './displaydaytooltip/display-date-tooltip.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoItemComponent,
-    DoneTasksFilterPipe
+    DoneTasksFilterPipe,
+    DisplayDateTooltipDirective
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { DoneTasksFilterPipe } from './donetasksfilter/donetasksfilter.pipe';
     MatCheckboxModule,
     MatRadioModule,
     MatIconModule,
-    ScrollingModule
+    ScrollingModule,
+    MatTooltipModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

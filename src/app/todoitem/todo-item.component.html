@@ -1,5 +1,7 @@
-<mat-list-item role="listitem" class="item-component">
-  <mat-checkbox
+<mat-list-item role="listitem" class="item-component"
+appDisplayDateTooltip [isDone]="this.todo.done" [dateDone]="getDoneDateString()!"    
+>
+    <mat-checkbox
     (change)="markTask()"
     [checked]="this.todo.done"
     class="done-checkbox"
@@ -10,6 +12,8 @@
     type="button"
     mat-mini-fab
     color="primary"
+    class="delete-button"
+    class="mat-elevation-z0"
     (click)="deleteTask()"
   >
     <mat-icon>delete</mat-icon>

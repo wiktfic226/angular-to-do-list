@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 export interface Todo {
   name: string
   done: boolean
+  dateDone?: Date
 }
 
 @Injectable({
@@ -23,8 +24,11 @@ export class TodosService {
   }
 
   markTask(task: Todo) {
-    this.todos.forEach((element,index)=>{
-      if(element.name==task.name) element.done = !element.done;
+    this.todos.forEach((element)=>{
+      if(element.name==task.name) {
+        element.done = !element.done;
+        element.done ? element.dateDone = new Date() : null;
+      }
     });
   }
 }
