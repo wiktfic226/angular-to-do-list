@@ -15,13 +15,15 @@ import { DoneTasksFilterPipe } from './donetasksfilter/donetasksfilter.pipe';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDividerModule} from '@angular/material/divider';
 import { DisplayDateTooltipDirective } from './displaydaytooltip/display-date-tooltip.directive';
+import { AlertComponent } from './alert/alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoItemComponent,
     DoneTasksFilterPipe,
-    DisplayDateTooltipDirective
+    DisplayDateTooltipDirective,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

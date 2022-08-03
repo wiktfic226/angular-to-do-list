@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Todo, TodosService } from '../todos/todos.service';
 
 @Component({
@@ -12,7 +12,10 @@ export class TodoItemComponent implements OnInit {
   @ViewChild('donecheckbox', { static: true }) 
   doneCheckbox!: ElementRef;
 
-  constructor(private todoService: TodosService) { }
+  @Output() deleteTaskEvent: EventEmitter<Todo> = new EventEmitter<Todo>();
+  @Output() markTaskEvent: EventEmitter<Todo> = new EventEmitter<Todo>();
+
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -22,11 +25,11 @@ export class TodoItemComponent implements OnInit {
   }
 
   deleteTask() {
-    this.todoService.delete(this.todo);
+    this.deleteTaskEvent.emit(this.todo);
   }
 
   markTask() {
-    this.todoService.markTask(this.todo);
+    this.markTaskEvent.emit(this.todo);
   }
 
   getDoneDateString() {

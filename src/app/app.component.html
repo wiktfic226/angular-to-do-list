@@ -1,3 +1,5 @@
+<!-- <app-alert></app-alert> -->
+<p><ng-container #container></ng-container></p>
 <mat-card class="todo-card">
   <mat-card-title>Todo</mat-card-title>
   <div class="task-form">
@@ -21,7 +23,7 @@
     <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="list-viewport">
       <mat-list-item *ngFor="let task of getTasks() | donetasksfilter: false">
         <p matLine></p>
-        <app-todo [todo]="task"></app-todo>
+        <app-todo [todo]="task" (deleteTaskEvent)="deleteTask(task)" (markTaskEvent)="markTask(task)"></app-todo>
       </mat-list-item>
     </cdk-virtual-scroll-viewport>
   </div>
@@ -39,7 +41,7 @@
         <p matLine></p>
         <p matLine></p>
         <p matLine></p>
-        <app-todo [todo]="task"></app-todo>
+        <app-todo [todo]="task" (deleteTaskEvent)="deleteTask(task)" (markTaskEvent)="markTask(task)"></app-todo>
       </mat-list-item>
     </cdk-virtual-scroll-viewport>
   </div>
