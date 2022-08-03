@@ -1,13 +1,15 @@
 .notification {
-    position:absolute;
-    right: 0;
-    top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-.green {
-    fill: green;
-}
-
-.red {
-    fill: red;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -57,7 +57,6 @@ export class AppComponent implements OnInit{
     const componentRef = this.container.createComponent(AlertComponent);
     componentRef.instance.text = message;
     componentRef.instance.state = alertState;
-    const source = timer(3000);
     this.destroyNotification(componentRef);
   }
 
@@ -65,7 +64,7 @@ export class AppComponent implements OnInit{
     return new Promise(() => {
       setTimeout(() => {
         component.destroy();
-      }, 2000);
+      }, 1800);
     });
   }
 }
