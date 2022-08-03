@@ -1,0 +1,6 @@
+<svg width="300" height="50" class="notification" >
+    <rect *ngIf="isSuccess() && state != null" width="300" height="50" fill=green rx="3" ry="3" />
+    <rect *ngIf="!isSuccess() && state != null" width="300" height="50" fill=red rx="3" ry="3"/>
+    <text x="3" y="18" fill="black" font-size="large" font-weight="bold">{{getStateAsString()}}</text>
+    <text x="3" y="40" fill="black">{{text}}</text>
+</svg> 
