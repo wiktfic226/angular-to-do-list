@@ -1,5 +1,4 @@
 import { Component, ComponentRef, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { timer } from 'rxjs';
 import { AlertComponent, AlertState } from './alert/alert/alert.component';
 import { TodosService, Todo } from './todos/todos.service';
 
