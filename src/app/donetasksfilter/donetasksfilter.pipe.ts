@@ -7,7 +7,7 @@ import { Todo } from '../todos/todos.service';
 })
 export class DoneTasksFilterPipe implements PipeTransform {
 
-  transform(todos: Array<Todo>, isDone: boolean): Array<Todo> {
+  transform(todos: Todo[], isDone: boolean): Todo[] {
     return todos.filter(item => item.done == isDone);
   }
 }
