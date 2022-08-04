@@ -9,6 +9,8 @@ import { AlertComponent, AlertState } from '../alert/alert/alert.component';
 export class NotificationService {
   constructor(private overlay: Overlay) {}
 
+  replaced: boolean = false;
+
   overlayRef = this.overlay.create({
     positionStrategy: this.overlay
       .position()
@@ -18,6 +20,10 @@ export class NotificationService {
   });
 
   renderNotification(message: string, alertState: AlertState) {
+    if(this.overlayRef.hasAttached()) {
+      this.overlayRef.detach();
+      this.replaced = true;
+    }
     const componentRef = this.overlayRef.attach(new ComponentPortal(AlertComponent));
     componentRef.instance.message = message;
     componentRef.instance.state = alertState;
@@ -27,8 +33,13 @@ export class NotificationService {
   destroyNotification() {
     return new Promise(() => {
       setTimeout(() => {
-        this.overlayRef.detach();
-      }, 1800);
+        if(this.replaced !== true) 
+          this.overlayRef.detach();
+        else {
+          clearTimeout();
+          this.replaced = false;
+        }
+      }, 2000);
     });
   }
 }
