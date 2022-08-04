@@ -16,7 +16,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDividerModule} from '@angular/material/divider';
 import { DisplayDateTooltipDirective } from './displaydaytooltip/display-date-tooltip.directive';
 import { AlertComponent } from './alert/alert/alert.component';
-
+import {OverlayModule} from '@angular/cdk/overlay';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { AlertComponent } from './alert/alert/alert.component';
     MatIconModule,
     ScrollingModule,
     MatTooltipModule,
-    MatDividerModule
+    MatDividerModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

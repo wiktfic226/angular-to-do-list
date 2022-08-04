@@ -1,5 +1,5 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 
 export enum AlertState {
   Success,
@@ -13,10 +13,15 @@ export enum AlertState {
 })
 export class AlertComponent implements OnInit {
 
-  @Input() text!: string;
-  @Input() state!: AlertState;
+  message: string = "Task";
+  state: AlertState = AlertState.Success;
   alertState = AlertState;
-  constructor() { }
+  // constructor(@Inject('message') message: string, state: AlertState) { 
+  //   this.message = message;
+  //   this.state = state;
+  // }
+
+  constructor() {   }
 
   ngOnInit(): void {
   }
